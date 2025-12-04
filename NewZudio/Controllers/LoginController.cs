@@ -28,6 +28,7 @@ namespace NewZudio.Controllers
                 {
                     Session["ID"] = list.Id;
                     Session["Name"] = list.Name;
+                    Session["Role"] = list.Role;
                     return RedirectToAction("Dashboard", "Dashboard");
                 }
                 else
