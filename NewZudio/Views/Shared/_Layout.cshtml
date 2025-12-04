@@ -158,13 +158,13 @@
                             <div class="dropdown-menu dropdown-menu-right shadow border-0"
                                  aria-labelledby="dropdownUser">
                                 <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user-circle mr-2"></i> @HttpContext.Current.Session["Role"].ToString()
+                                    <i class="fas fa-user-circle mr-2"></i> Profile
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs mr-2"></i> Settings
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="login.html">
+                                <a class="dropdown-item text-danger" href="@Url.Action("Logout","Login")">
                                     <i class="fas fa-sign-out-alt mr-2"></i> Logout
                                 </a>
                             </div>

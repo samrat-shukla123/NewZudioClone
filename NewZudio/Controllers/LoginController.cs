@@ -41,5 +41,12 @@ namespace NewZudio.Controllers
             else
                 return View();
         }
+        public ActionResult Logout()
+        {
+            Session.Clear();        // Clears all session values
+            Session.Abandon();      // Ends the session
+
+            return RedirectToAction("Login", "Login");
+        }
     }
 }
