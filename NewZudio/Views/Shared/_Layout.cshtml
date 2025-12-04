@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyApp | Dashboard</title>
+    <!-- Bootstrap 4.6.2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Optional: Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="~/assets/css/Style.css" rel="stylesheet" />
+    <style>
+      
+    </style>
+</head>
+<body>
+
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <aside class="sidebar collapse d-lg-block" id="sidebarMenu">
+            <div class="sidebar-header d-flex justify-content-center align-items-center mb-4">
+                <h2 class="text-white font-weight-bolder mb-0">MyApp</h2>
+
+                <!-- Sidebar Close Button (Mobile Only) -->
+                
+            </div>
+
+            <nav class="nav nav-pills flex-column px-2 flex-grow-1">
+
+                <a class="nav-link" href="#" data-page="dashboard">
+                    <i class="fas fa-home mr-2"></i> Dashboard
+                </a>
+
+                <!-- Master Data Dropdown -->
+                <a class="nav-link d-flex justify-content-between align-items-center mb-1 collapsed"
+                   data-toggle="collapse"
+                   data-target="#masterDataCollapse"
+                   aria-expanded="false"
+                   role="button">
+                    <span class="d-flex align-items-center">
+                        <i class="fas fa-database mr-2"></i> Master
+                    </span>
+                    <i class="fas fa-chevron-down small submenu-icon"></i>
+                </a>
+
+                <div class="collapse submenu" id="masterDataCollapse">
+                    <ul class="nav flex-column py-2">
+                        <li class="submenu-item">
+                            <a class="nav-link" href="#" data-page="customers">User Master</a>
+                        </li>
+                        <li class="submenu-item">
+                            <a class="nav-link" href="#">Vender Master</a>
+                        </li>
+                        <li class="submenu-item">
+                            <a class="nav-link" href="#">Brand Master</a>
+                        </li>
+                        <li class="submenu-item">
+                            <a class="nav-link" href="#">Color Master</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a class="nav-link mb-1" href="#"><i class="fas fa-users mr-2"></i> Po Upload</a>
+
+                <!-- Reports Dropdown -->
+                <a class="nav-link d-flex justify-content-between align-items-center mb-1 collapsed"
+                   data-toggle="collapse"
+                   data-target="#reportsCollapse"
+                   aria-expanded="false"
+                   role="button">
+                    <span class="d-flex align-items-center">
+                        <i class="fas fa-chart-line mr-2"></i> Reports
+                    </span>
+                    <i class="fas fa-chevron-down small submenu-icon"></i>
+                </a>
+
+                <div class="collapse submenu" id="reportsCollapse">
+                    <ul class="nav flex-column py-2">
+                        <li class="submenu-item">
+                            <a class="nav-link" href="#">Sales Report</a>
+                        </li>
+                        <li class="submenu-item">
+                            <a class="nav-link" href="#">Inventory Report</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a class="nav-link mb-1" href="#"><i class="fas fa-cog mr-2"></i> Settings</a>
+
+                <!-- Logout Link -->
+                <a class="nav-link mt-auto mb-1 text-danger logout-link" href="login.html">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Sidebar Backdrop (Mobile Only) -->
+        <div class="sidebar-backdrop d-lg-none"
+             data-toggle="collapse"
+             data-target="#sidebarMenu"
+             aria-controls="sidebarMenu"></div>
+
+        <!-- Main Content Wrapper -->
+        <div class="main-content flex-grow-1">
+
+            <!-- Top Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-3 px-4">
+                <div class="container-fluid">
+                    <!-- Mobile Sidebar Toggle Button -->
+                    <button class="btn btn-primary d-lg-none mr-3 collapsed sidebar-toggle-button"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#sidebarMenu"
+                            aria-controls="sidebarMenu"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+
+                        <span class="sidebar-toggle-icon">
+                            <i class="fas fa-bars icon-open"></i>
+                            <i class="fas fa-times icon-close"></i>
+                        </span>
+                    </button>
+
+                    <!-- Search Bar (Desktop only) -->
+                    <form class="d-none d-md-flex mr-auto search-group search-form" role="search">
+                        <div class="input-group w-100">
+                            <input class="form-control border-0 bg-light pl-3"
+                                   type="search"
+                                   placeholder="Search anything..."
+                                   aria-label="Search">
+                            <span class="input-group-text bg-light border-0">
+                                <i class="fas fa-search text-secondary"></i>
+                            </span>
+                        </div>
+                    </form>
+
+                    <!-- User and Notifications -->
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-light rounded-circle p-2 mr-3" type="button">
+                            <i class="fas fa-bell text-secondary"></i>
+                        </button>
+
+                        <div class="dropdown">
+                            <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
+                               id="dropdownUser"
+                               data-toggle="dropdown"
+                               aria-expanded="false">
+                                <img src="https://static.vecteezy.com/system/resources/previews/014/194/216/non_2x/avatar-icon-human-a-person-s-badge-social-media-profile-symbol-the-symbol-of-a-person-vector.jpg"
+                                     alt="Avatar"
+                                     width="32"
+                                     height="32"
+                                     class="rounded-circle mr-2 avatar">
+                                <span class="d-none d-md-inline font-weight-medium">@HttpContext.Current.Session["Name"].ToString()</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow border-0"
+                                 aria-labelledby="dropdownUser">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user-circle mr-2"></i> Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs mr-2"></i> Settings
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="login.html">
+                                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
+            </div>
+           
+
+        </div>
+    </div>
+
+    <!-- jQuery, Popper.js, and Bootstrap JS (REQUIRED FOR BS4) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <script>
+        // --- Custom JavaScript Enhancements (Using jQuery for BS4) ---
+        $(document).ready(function () {
+            const $sidebarElement = $('#sidebarMenu');
+            const currentPageName = 'dashboard'; // Simulating current page
+
+            // 1. Logic for menu link activation
+            $('.sidebar .nav-link').each(function () {
+                const $link = $(this);
+                const linkPage = $link.data('page');
+
+                if (linkPage === currentPageName) {
+                    $link.addClass('active');
+
+                    // Open parent submenu if necessary (only applies to submenu items)
+                    const $submenu = $link.closest('.collapse');
+                    if ($submenu.length) {
+                        $submenu.collapse('show');
+
+                        // Ensure the parent toggle link is visually active/open
+                        const $parentLink = $submenu.prev('.nav-link[data-toggle="collapse"]');
+                        if ($parentLink.length) {
+                            $parentLink.removeClass('collapsed').attr('aria-expanded', 'true');
+                        }
+                    }
+                }
+            });
+
+            // 2. Mobile Fix: Close sidebar when a final menu link is clicked
+            $sidebarElement.on('click', '.nav-link:not([data-toggle="collapse"])', function () {
+                if (window.innerWidth < 992) {
+                    $sidebarElement.collapse('hide');
+                }
+            });
+
+            // 3. Mobile Fix: Close sidebar when backdrop is clicked
+            $('.sidebar-backdrop').on('click', function () {
+                $sidebarElement.collapse('hide');
+            });
+
+            // 4. Manual class handling for the backdrop display logic
+            $sidebarElement.on('show.bs.collapse', function () {
+                $(this).next('.sidebar-backdrop').show();
+            });
+            $sidebarElement.on('hide.bs.collapse', function () {
+                $(this).next('.sidebar-backdrop').hide();
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)

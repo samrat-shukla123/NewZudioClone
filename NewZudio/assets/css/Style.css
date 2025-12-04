@@ -1,0 +1,473 @@
+﻿/* ============================================================= */
+/*  LOGIN PAGE – EXACT SAME DESIGN (only moved to external file) */
+/* ============================================================= */
+
+.login-page-body {
+    background-color: #F8F9FA;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page-card {
+    margin-right:150px;
+    max-width: 400px;
+    width: 150%;
+    padding: 30px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+.login-page-brand {
+    color: #4C5A9F;
+}
+
+.btn-login-theme {
+    background-color: #384279 !important;
+    border-color: #4C5A9F;
+    color: white !important;
+    border-radius: 0.5rem;
+}
+
+    
+
+.login-page-input:focus {
+    border-color: #4C5A9F !important;
+    box-shadow: 0 0 0 0.2rem rgba(76, 90, 159, 0.25) !important;
+}
+
+.login-page-input-group .input-group-text {
+    background-color: #e9ecef;
+    border-right: none;
+}
+/* ============================================================= */
+/*  DASHBOARD PAGE – EXACT DESIGN USING BOOTSTRAP 4               */
+/*  All classes are prefixed with "dash4-" to avoid conflicts    */
+/* ============================================================= */
+
+:root {
+    --dash4-primary: #4C5A9F;
+    --dash4-primary-rgb: 76, 90, 159;
+    --dash4-bg-light: #F8F9FA;
+    --dash4-sidebar-width: 250px;
+}
+
+.dash4-body {
+    background-color: var(--dash4-bg-light);
+    overflow-x: hidden;
+}
+
+/* Sidebar */
+.dash4-sidebar {
+    width: var(--dash4-sidebar-width);
+    background-color: var(--dash4-primary);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0.75rem 0.75rem 0;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+    z-index: 1030;
+}
+
+.dash4-sidebar-header {
+    background-color: rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 1rem;
+}
+
+.dash4-sidebar .nav {
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+.dash4-sidebar .nav-link {
+    color: rgba(255,255,255,0.75);
+    padding: 0.75rem 1rem;
+    transition: all 0.2s;
+    border-radius: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+    .dash4-sidebar .nav-link:hover {
+        color: white;
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    .dash4-sidebar .nav-link.active {
+        color: var(--dash4-primary);
+        background-color: white;
+        font-weight: 600;
+        box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+    }
+
+.dash4-submenu {
+    background-color: rgba(0,0,0,0.05);
+    padding-left: 1.5rem !important;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+    .dash4-submenu .nav-link {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 0.95rem;
+        margin-bottom: 0;
+    }
+
+.dash4-submenu-icon {
+    transition: transform 0.3s ease;
+}
+
+.dash4-nav-link:not(.collapsed) .dash4-submenu-icon {
+    transform: rotate(180deg);
+}
+
+.dash4-logout-link {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem !important;
+}
+
+/* Main Content */
+.dash4-main-content {
+    margin-left: var(--dash4-sidebar-width);
+    min-height: 100vh;
+}
+
+/* Top Navbar */
+.dash4-navbar {
+    border-bottom: 1px solid var(--dash4-bg-light);
+}
+
+    .dash4-navbar .btn-primary {
+        background-color: var(--dash4-primary);
+        border-color: var(--dash4-primary);
+    }
+
+        .dash4-navbar .btn-primary:hover {
+            background-color: #384279;
+            border-color: #384279;
+        }
+
+/* Search */
+.dash4-search-group .input-group-text {
+    border-radius: 0 50rem 50rem 0 !important;
+}
+
+.dash4-search-group .form-control {
+    border-radius: 50rem 0 0 50rem !important;
+}
+
+/* Mobile */
+@media (max-width: 991.98px) {
+    .dash4-sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1030;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        border-radius: 0;
+    }
+
+        .dash4-sidebar.show {
+            transform: translateX(0);
+        }
+
+    .dash4-main-content {
+        margin-left: 0 !important;
+    }
+
+    .dash4-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 1029;
+        display: none;
+    }
+
+    .dash4-sidebar.show + .dash4-backdrop {
+        display: block;
+    }
+
+    .dash4-close-btn {
+        display: block !important;
+    }
+}
+
+/* Hamburger to X */
+.dash4-toggle-icon .icon-open {
+    display: inline-block;
+}
+
+.dash4-toggle-icon .icon-close {
+    display: none;
+}
+
+.dash4-toggle-btn:not(.collapsed) .icon-open {
+    display: none;
+}
+
+.dash4-toggle-btn:not(.collapsed) .icon-close {
+    display: inline-block;
+}
+
+.dash4-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* --- THEME DEFINITIONS --- */
+:root {
+    --app-primary-dark: #4C5A9F; /* Main sidebar/brand color */
+    --app-primary-rgb: 76, 90, 159;
+    --app-background-light: #F8F9FA; /* Content background */
+    --app-sidebar-width: 250px;
+}
+
+body {
+    background-color: var(--app-background-light);
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- SIDEBAR STYLING --- */
+.sidebar {
+    width: var(--app-sidebar-width);
+    background-color: var(--app-primary-dark);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0.75rem 0.75rem 0;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    z-index: 1020;
+}
+
+.sidebar-header {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+}
+
+.sidebar .nav {
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+/* Nav Links */
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    padding: 0.75rem 1rem;
+    transition: all 0.2s;
+    border-radius: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+    .sidebar .nav-link:hover {
+        color: white;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Active Link */
+    .sidebar .nav-link.active {
+        color: var(--app-primary-dark);
+        background-color: white;
+        font-weight: 600;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+
+/* Submenu Container */
+.submenu {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding-left: 1.5rem !important;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+    .submenu .nav-link {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 0.95rem;
+        margin-bottom: 0;
+    }
+
+/* Dropdown Chevron Icon */
+.submenu-icon {
+    transition: transform 0.3s ease;
+}
+/* BS4 equivalent to :not(.collapsed) is used for dropdown toggle */
+.nav-link:not(.collapsed) .submenu-icon {
+    transform: rotate(180deg);
+}
+
+/* Logout Link Separation */
+.logout-link {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem !important;
+}
+
+/* --- MAIN CONTENT & NAVBAR --- */
+.main-content {
+    width: 100%;
+}
+
+.navbar {
+    border-bottom: 1px solid var(--app-background-light);
+}
+
+    /* Mobile Sidebar Toggle Button */
+    .navbar .btn-primary {
+        background-color: var(--app-primary-dark);
+        border-color: var(--app-primary-dark);
+        border-radius: .5rem;
+    }
+
+        .navbar .btn-primary:hover {
+            background-color: #384279;
+            border-color: #384279;
+        }
+
+/* Search Input Group Custom Styling for "rounded-pill" look */
+.search-group .form-control {
+    border-radius: 50rem 0 0 50rem !important;
+}
+
+.search-group .input-group-text {
+    border-radius: 0 50rem 50rem 0 !important;
+    cursor: pointer;
+}
+
+.search-form {
+    max-width: 400px;
+}
+
+/* User Avatar Placeholder */
+.avatar {
+    min-width: 32px;
+    min-height: 32px;
+}
+
+/* --- MOBILE SIDEBAR OVERRIDES (Max Width 991.98px for 'lg') --- */
+media (max-width: 991.98px) {
+    /* Custom off-canvas behavior using Bootstrap's .show class */
+    .sidebar
+
+{
+    position: fixed;
+    z-index: 1030;
+    top: 0;
+    bottom: 0;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    width: var(--app-sidebar-width);
+    border-radius: 0;
+}
+
+.sidebar.show {
+    transform: translateX(0);
+}
+
+.sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1029;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.sidebar.show + .sidebar-backdrop {
+    display: block;
+}
+/* Show close button on mobile, hide on desktop */
+.sidebar-close-btn {
+    display: block !important;
+}
+
+}
+
+/* Hamburger/Close Icon Toggle in Navbar */
+.sidebar-toggle-icon .icon-open {
+    display: inline-block;
+}
+
+.sidebar-toggle-icon .icon-close {
+    display: none;
+}
+
+.sidebar-toggle-button:not(.collapsed) .icon-open {
+    display: none;
+}
+
+.sidebar-toggle-button:not(.collapsed) .icon-close {
+    display: inline-block;
+}
+
+/* Sidebar Close Button positioning */
+.sidebar-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Cards / custom classes instead of inline style */
+.card-stat-primary {
+    background-color: var(--app-primary-dark);
+    color: #ffffff;
+    border: none;
+}
+
+    .card-stat-primary .opacity-50 {
+        opacity: 0.5;
+    }
+
+.rounded-lg {
+    border-radius: 0.75rem !important;
+}
+
+.card-main-metrics {
+    margin-top: 1.5rem;
+}
+/* Sidebar ko full height + scrollable bana do */
+.sidebar {
+    width: 250px; /* agar already var(--app-sidebar-width) hai toh theek */
+    height: 100vh;
+    background-color: #4C5A9F;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* IMPORTANT: scroll ayega */
+}
+
+/* Header fixed rahe, shrink na ho */
+.sidebar-header {
+    flex-shrink: 0;
+}
+
+/* Nav area hi grow + scroll kare */
+.sidebar .nav {
+    flex: 1 1 auto;
+}
+
+/* Logout item ko bottom pe chipkane ke liye (ye already lagaya hua hai) */
+.logout-link {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem !important;
+}
